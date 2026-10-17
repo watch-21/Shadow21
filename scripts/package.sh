@@ -17,6 +17,7 @@ install -m 644 "$root/gui/org.shadow21.Desktop.desktop" "$root/gui/org.shadow21.
 install -m 644 "$root/icons/shadow21.svg" "$stage/usr/share/icons/hicolor/scalable/apps/"
 install -m 644 "$root/configs/org.shadow21.helper.policy" "$stage/usr/share/polkit-1/actions/"
 install -m 644 "$root/LICENSE" "$root/LICENSE-GPL-3" "$root/NOTICE" "$root/README.md" "$stage/usr/share/doc/shadow21/"
+install -m 644 "$root/debian/copyright" "$stage/usr/share/doc/shadow21/copyright"
 cat > "$stage/DEBIAN/control" <<CONTROL
 Package: shadow21
 Version: $version
