@@ -1,0 +1,13 @@
+[Unit]
+Description=Restore shadow21 state from an interrupted session
+After=local-fs.target NetworkManager.service
+Before=shadow21d.service tor@default.service
+
+[Service]
+Type=oneshot
+NotifyAccess=all
+ExecStart=/usr/lib/shadow21/shadow21-helper boot-recover
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

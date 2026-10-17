@@ -1,0 +1,21 @@
+Shadow21 is a modified version of AnonSurf by the Parrot Security team and contributors.
+Upstream debian/copyright declares GPL-3.0-or-later for the application; LICENSE is retained as shipped and LICENSE-GPL-3 contains the GPL-3 text.
+Original source: https://gitlab.com/parrotsec/packages/anonsurf
+Upstream copyright and license files are retained as supplied.
+The vendored dependencies retain their own licenses.
+
+Modified release: wvpn21 1.1.0, 2026-10-14.
+Changes include exclusive connection modes, authorized root tmux lifecycle, configuration restoration safeguards and independent asynchronous IP observations.
+
+Modified release: wvpn21 1.1.1, 2026-10-14. Installation now prepares persistent loopback SOCKS configuration after checking Tor, with independent backup and guarded removal restoration.
+
+wvpn21 1.2.0 modifications (2026-10-14): independent baseline IP, periodic route checks, local interface counters, tor-named isolated session and Tor/tmux installation dependencies.
+
+wvpn21 1.2.1 modifications (2026-10-14): explicit embedded QML import path for Qt 6.4 installed binaries and deployment regression coverage.
+
+2026-10-15: wvpn21 v1 adds an embedded libvterm terminal with scoped authorized tmux attachment and retains the existing routing/session backend. libvterm is dynamically linked; its distribution copyright is reproduced in docs/third-party/libvterm.txt.
+
+2026-10-15: Shadow21 v1 continues the modified wvpn21 source. Application namespaces and deployment files are rebranded; upstream notices and dependency licenses are retained.
+
+Shadow21 modifications: Copyright (C) 2026 watch-21.
+Modification credits apply to the Shadow21 changes, not to upstream code or third-party dependencies.

@@ -1,0 +1,11 @@
+# Proxy preparation and mode selection
+
+The initial desktop view follows validated saved preferences. Restoring that view does not start a service or session. Selecting the tmux button explicitly prepares the system Tor service; Start session remains a separate authorized operation. This keeps the visible mode aligned with the backend guards, including after reopening the application with proxy preferences.
+
+An existing SOCKS listener must still pass loopback binding, executable, PID and supported active-service identity checks. A listening socket or an active service alone is not a successful external Tor request. The checked proxy performs up to three attempts at the same HTTPS diagnostic service, within a 45-second context budget and the caller's shorter deadline. Two seconds separate transient failures. A completed response that does not confirm a Tor exit fails immediately. There is no direct retry, alternate direct route or readiness bypass.
+
+Connection-check failures use a separate proxy-readiness error category and retain bounded technical detail. They are not instructions to stop an unrelated Tor service. Genuine ownership/configuration conflicts keep their existing protections. Failure before session creation does not create a session journal or stop a borrowed service. If requests through the proxy also fail from an independent terminal, network, Tor circuit and configuration diagnosis is still necessary; this change does not establish or repair the underlying network path.
+
+System routing and proxy sessions remain mutually exclusive. The system Start guard is retained. Switching away from an active or interrupted proxy still requires successful cleanup; authorization denial or cleanup failure blocks the transition. Do not delete recovery journals to force a switch.
+
+Verification uses command fixtures for transient success, repeated failure, cancellation, explicit non-Tor responses, preserved causes and error categorization. Qt fixtures cover initial preference/view alignment, preserved failure details and existing cleanup/mode guards. Offscreen EN/DE rendering includes a saved proxy mode without an explicit inspection-view override. Real Tor connectivity and desktop integration require disposable VM verification.

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Shadow21
+GenericName=Tor Privacy Manager
+GenericName[de]=Tor-Datenschutzverwaltung
+Comment=Manage Tor routing and optional tmux sessions
+Comment[de]=Tor-Routing und optionale tmux-Sitzungen verwalten
+Exec=shadow21-gui
+Icon=shadow21
+Terminal=false
+Categories=Network;Security;
+StartupNotify=true

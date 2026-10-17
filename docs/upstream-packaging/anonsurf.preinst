@@ -1,0 +1,41 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" != "upgrade" ] ||
+	! dpkg --compare-versions "$2" lt "6.0.0~"; then
+	exit 0
+fi
+
+firewall_state=/etc/network/iptables.rules
+dns_state=/etc/anonsurf/resolv.conf.bak
+tor_state=/etc/tor/torrc.bak
+
+if [ -f "$firewall_state" ]; then
+	if [ ! -x /usr/lib/anonsurf/anondaemon ]; then
+		echo "anonsurf: legacy daemon is unavailable" >&2
+		exit 1
+	fi
+	if systemctl is-active --quiet anonsurfd.service; then
+		systemctl stop anonsurfd.service
+	else
+		/usr/lib/anonsurf/anondaemon stop
+	fi
+fi
+
+if [ -f "$dns_state" ]; then
+	/usr/bin/dnstool restore-backup
+fi
+
+if [ -f "$tor_state" ]; then
+	/usr/lib/anonsurf/make-torrc restore
+fi
+
+for state in "$firewall_state" "$dns_state" "$tor_state"; do
+	if [ -e "$state" ]; then
+		echo "anonsurf: legacy state was not restored: $state" >&2
+		exit 1
+	fi
+done
+
+exit 0

@@ -1,0 +1,13 @@
+configs/onion.pac etc/anonsurf/
+configs/bridges.txt etc/anonsurf/
+configs/anonsurf.cfg etc/anonsurf/
+
+build/release/make-torrc usr/lib/anonsurf/
+build/release/anondaemon usr/lib/anonsurf/
+build/release/safekill usr/lib/anonsurf/
+build/release/dnstool usr/bin/
+
+sys-units/anonsurfd.service lib/systemd/system/
+sys-units/anonsurf-identity.service lib/systemd/system/
+sys-units/anonsurf-recovery.service lib/systemd/system/
+sys-units/tor@default.service.d/anonsurf-recovery.conf lib/systemd/system/tor@default.service.d/

@@ -1,0 +1,23 @@
+[Unit]
+Description=shadow21 system-wide Tor routing
+Requires=shadow21-recovery.service
+Wants=network-online.target
+After=shadow21-recovery.service network-online.target NetworkManager.service
+
+[Service]
+Type=oneshot
+NotifyAccess=all
+StateDirectory=shadow21
+StateDirectoryMode=0700
+RuntimeDirectory=shadow21
+RuntimeDirectoryMode=0700
+RuntimeDirectoryPreserve=yes
+ExecStart=/usr/lib/shadow21/shadow21-helper start
+ExecReload=/usr/lib/shadow21/shadow21-helper restart
+ExecStop=/usr/lib/shadow21/shadow21-helper stop
+RemainAfterExit=yes
+TimeoutStartSec=360
+TimeoutStopSec=360
+
+[Install]
+WantedBy=multi-user.target

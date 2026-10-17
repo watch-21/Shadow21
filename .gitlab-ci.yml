@@ -1,0 +1,20 @@
+stages: [check, build]
+variables:
+  DEBIAN_FRONTEND: noninteractive
+default:
+  image: debian:trixie-slim
+  before_script:
+    - apt-get update
+    - apt-get install -y --no-install-recommends golang-go python3 make cmake g++ qt6-base-dev qt6-declarative-dev qml6-module-qtquick qml6-module-qtquick-controls qml6-module-qtquick-templates qml6-module-qtquick-layouts qml6-module-qtquick-window qml6-module-qtqml-workerscript libqt6svg6
+check:
+  stage: check
+  script:
+    - make check
+build:
+  stage: build
+  script:
+    - make build
+    - python3 tests/cli_smoke.py
+    - ./scripts/package.sh
+  artifacts:
+    paths: [dist/]

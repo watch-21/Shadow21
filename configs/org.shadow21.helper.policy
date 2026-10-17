@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN" "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+<policyconfig>
+ <vendor>Shadow21</vendor>
+ <action id="org.shadow21.helper">
+  <description>Manage Shadow21 networking and root tmux sessions</description>
+  <description xml:lang="de">Shadow21-Netzwerk und root-tmux-Sitzungen verwalten</description>
+  <message>Authentication is required to manage networking or root tmux sessions. Session commands have administrator privileges.</message>
+  <message xml:lang="de">Authentifizierung für Netzwerkänderungen oder root-tmux-Sitzungen erforderlich. Sitzungsbefehle haben Administratorrechte.</message>
+  <defaults><allow_any>no</allow_any><allow_inactive>no</allow_inactive><allow_active>auth_admin</allow_active></defaults>
+  <annotate key="org.freedesktop.policykit.exec.path">/usr/lib/shadow21/shadow21-helper</annotate>
+ </action>
+ <action id="org.shadow21.install">
+  <description>Install an optional Shadow21 dependency</description>
+  <description xml:lang="de">Optionale Shadow21-Abhängigkeit installieren</description>
+  <message>Authentication is required to install tmux.</message>
+  <message xml:lang="de">Authentifizierung für die Installation von tmux erforderlich.</message>
+  <defaults><allow_any>no</allow_any><allow_inactive>no</allow_inactive><allow_active>auth_admin</allow_active></defaults>
+  <annotate key="org.freedesktop.policykit.exec.path">/usr/lib/shadow21/shadow21-install</annotate>
+ </action>
+</policyconfig>

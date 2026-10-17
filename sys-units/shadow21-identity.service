@@ -1,0 +1,9 @@
+[Unit]
+Description=Request a new shadow21 Tor identity
+Requisite=shadow21d.service
+After=shadow21d.service tor@default.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/shadow21/shadow21-helper changeid
+TimeoutStartSec=30

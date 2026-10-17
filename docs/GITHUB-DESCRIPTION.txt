@@ -1,0 +1,1 @@
+Linux Tor routing manager with a compact English/German desktop interface, optional root tmux sessions, IP checks and MAC controls.

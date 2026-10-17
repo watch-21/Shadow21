@@ -1,0 +1,22 @@
+_anonsurf() {
+    local current="${COMP_WORDS[COMP_CWORD]}"
+    local previous="${COMP_WORDS[COMP_CWORD-1]}"
+    local words
+
+    if [[ "$previous" == "boot" ]]; then
+        COMPREPLY=($(compgen -W 'enable disable status' -- "$current"))
+        return
+    fi
+
+    case "${COMP_WORDS[1]}" in
+        start|stop|restart) words='-k --safe-kill --verbose -h --help' ;;
+        status) words='-n --nyx --json --verbose -h --help' ;;
+        ip) words='--json --verbose -h --help' ;;
+        boot) words='enable disable status --verbose -h --help' ;;
+        *) words='start stop restart status changeid ip monitor boot --verbose -h --help -v --version' ;;
+    esac
+    COMPREPLY=($(compgen -W "$words" -- "$current"))
+}
+
+complete -F _anonsurf anonsurf
+complete -W 'help address status create-backup restore-backup --verbose' dnstool

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Shadow21 CLI
+Comment=Tor routing command line
+Comment[de]=Tor-Routing-Befehlszeile
+Exec=shadow21 --help
+Icon=shadow21
+Terminal=true
+Categories=Network;Security;
