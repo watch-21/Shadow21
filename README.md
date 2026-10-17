@@ -1,6 +1,6 @@
-<p align="center"><img src="icons/shadow21.svg" alt="Shadow21" height="90"></p>
+<h1 align="center">Shadow21 v1</h1>
 
-# Shadow21 v1
+<p align="center"><img src="icons/shadow21.svg" alt="Shadow21 logo" width="240"></p>
 
 A Linux Tor routing manager with a compact desktop interface in **English and German**. Initial public release, based on ParrotSec AnonSurf.
 
@@ -17,13 +17,15 @@ Only one connection mode can run at a time. Detaching keeps a tmux session runni
 
 ## Demo
 
-[![Shadow21 animated walkthrough](docs/media/demo-preview.jpg)](docs/media/shadow21-v1-demo.mp4)
+https://github.com/user-attachments/assets/3de279dd-2368-4211-bda3-ad3e183d2172
 
-[Watch the 2:13 video](docs/media/shadow21-v1-demo.mp4). Silent animation; IP/MAC values and terminal responses labeled **Demo data** are fictional.
+Silent 2:13 animation; IP/MAC values and terminal responses labeled **Demo data** are fictional.
 
 ## Install and launch
 
-Download the supplied `.deb` package on a compatible amd64 Debian-family system, then run from its download directory:
+[Download Shadow21 v1 (.deb)](https://github.com/watch-21/Shadow21/releases/download/v1/shadow21_v1_amd64.deb)
+
+Install the downloaded `.deb` package on a compatible amd64 Debian-family system, then run from its download directory:
 
 ```bash
 sudo apt install ./shadow21_v1_amd64.deb
